@@ -1,9 +1,9 @@
-# stub: signet 0.5.1 ruby lib
-require File.join(File.dirname(__FILE__), "lib/signet", "version")
+$LOAD_PATH.push File.expand_path("lib", __dir__)
+require "signet/version"
 
 Gem::Specification.new do |gem|
   gem.name = "signet"
-  gem.version = Signet::VERSION::STRING
+  gem.version = Signet::VERSION
 
   gem.required_rubygems_version = ">= 1.3.5"
   gem.require_paths = ["lib"]
@@ -35,8 +35,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "rspec", "~> 3.1"
   gem.add_development_dependency "simplecov", "~> 0.9"
   gem.add_development_dependency "yard", "~> 0.9", ">= 0.9.12"
-
-  gem.post_install_message = Signet::VERSION.warn_on_old_ruby_version
 
   if gem.respond_to? :metadata
     gem.metadata["changelog_uri"] = "https://github.com/google/signet/blob/master/CHANGELOG.md"
